@@ -1,0 +1,120 @@
+@use "../abstracts" as *;
+
+/*
+ * There code below is for the all
+ * the news articles and the media 
+ * quaries for the different screen sizes.
+*/
+
+.head-article {
+	display: grid;
+	gap: 1.5rem;
+
+	h1 {
+		font-size: 2.5rem;
+		line-height: 1;
+	}
+}
+
+.head-article-describ {
+	div {
+		display: grid;
+		gap: 1.5rem;
+		justify-items: start;
+		line-height: 1.8;
+	}
+}
+
+.news-article-with-bg {
+	padding: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	a {
+		color: var(--clr-neutral-100);
+		font-size: 20px;
+
+		&:hover,
+		&:focus {
+			color: var(--clr-primary-orange);
+		}
+	}
+
+	p {
+		margin-top: 0.5rem;
+		line-height: 1.8;
+		font-size: 15px;
+	}
+}
+
+.news-articles-with-imgs {
+	display: grid;
+	gap: 2rem;
+}
+
+.article-img-small {
+	width: 6.3rem;
+	height: fit-content;
+}
+
+.news-article-describ {
+	p:first-child {
+		font-size: 2rem;
+		line-height: 1;
+	}
+
+	a {
+		font-size: 1.1rem;
+		line-height: 1.5;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+/* Code for medium-large screens */
+@include mq(medium) {
+	.head-article-describ {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.news-articles-with-imgs {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.article-img-small {
+		image-rendering: pixelated;
+		height: fit-content;
+	}
+}
+
+/* Code for large screens */
+@include mq(large) {
+	.head-article-describ {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.head-article {
+		h1 {
+			font-size: 3.8rem;
+			line-height: 1;
+		}
+	}
+
+	.news-articles-with-imgs {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}

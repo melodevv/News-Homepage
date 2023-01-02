@@ -1,0 +1,446 @@
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/Inter-VariableFont_slnt,wght.ttf")
+		format("truetype");
+	font-display: swap;
+}
+:root {
+	--clr-primary-orange: hsl(35deg, 77%, 62%);
+	--clr-primary-red: hsl(5deg, 85%, 63%);
+	--clr-neutral-100: hsl(36deg, 100%, 99%);
+	--clr-neutral-200: hsl(233deg, 8%, 79%);
+	--clr-neutral-300: hsl(236deg, 13%, 42%);
+	--clr-neutral-400: hsl(240deg, 100%, 5%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0;
+	outline: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+button {
+	display: block;
+	user-select: none;
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+i {
+	font-size: 1.5rem;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	font-size: 15px;
+	font-weight: 400;
+	font-family: "Inter", sans-serif;
+	color: var(--clr-neutral-400);
+	background: var(--clr-neutral-100);
+	line-height: 1.8;
+	transition: ease-in-out 5s width;
+}
+
+a {
+	color: var(--clr-neutral-400);
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover,
+a:focus {
+	color: var(--clr-primary-red);
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+	max-width: 60ch;
+}
+
+.sm-screen-hidden {
+	display: none;
+}
+
+/*
+ * Utilities
+ * These are the reuseable classes
+*/
+.container {
+	padding: 0 6rem;
+	max-width: 1980px;
+	margin: 0 auto;
+}
+
+.display-flex-row {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.display-flex-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.text-primary-orange {
+	color: var(--clr-primary-orange) !important;
+}
+
+.bg-primary-orange {
+	background-color: var(--clr-primary-orange) !important;
+}
+
+.text-primary-red {
+	color: var(--clr-primary-red) !important;
+}
+
+.bg-primary-red {
+	background-color: var(--clr-primary-red) !important;
+}
+
+.text-neutral-100 {
+	color: var(--clr-neutral-100) !important;
+}
+
+.bg-neutral-100 {
+	background-color: var(--clr-neutral-100) !important;
+}
+
+.text-neutral-200 {
+	color: var(--clr-neutral-200) !important;
+}
+
+.bg-neutral-200 {
+	background-color: var(--clr-neutral-200) !important;
+}
+
+.text-neutral-300 {
+	color: var(--clr-neutral-300) !important;
+}
+
+.bg-neutral-300 {
+	background-color: var(--clr-neutral-300) !important;
+}
+
+.text-neutral-400 {
+	color: var(--clr-neutral-400) !important;
+}
+
+.bg-neutral-400 {
+	background-color: var(--clr-neutral-400) !important;
+}
+
+.font-weight-400 {
+	font-weight: 400;
+}
+
+.font-weight-700 {
+	font-weight: 700;
+}
+
+.font-weight-800 {
+	font-weight: 800;
+}
+
+.article-divider-line {
+	width: 100%;
+	height: 1px;
+	background-color: var(--clr-neutral-300);
+}
+
+/*
+ * Components
+ * There code below is to style all 
+ * all the buttons on the website. 
+*/
+.button {
+	display: grid;
+	place-content: center;
+	padding: 0.8rem 2.2rem;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+}
+
+.button:hover,
+.button:focus {
+	background-color: var(--clr-neutral-400) !important;
+}
+
+/*
+ * Navigation
+ * All the code relating to the
+ * navigation of the website on
+ * all screen sizes.
+*/
+.nav-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	padding-top: 1.8rem;
+	padding-bottom: 1.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1;
+}
+
+.nav-logo {
+	display: block;
+	width: 3rem;
+	font-size: 2rem;
+}
+
+.menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 70vw;
+	height: 100vh;
+	padding: 10rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--clr-neutral-100);
+	z-index: -1;
+	opacity: 0;
+	transition: ease 1s, width;
+	transform: translateX(70vw);
+}
+
+.nav-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	font-size: 1.5rem;
+}
+
+.menu-close {
+	display: none;
+}
+
+/* 
+ * JS Code to open and close 
+ * the hamburger menu
+*/
+.open-hamburger .menu-open {
+	display: none;
+	z-index: 99;
+}
+.open-hamburger .menu-close {
+	display: initial;
+}
+
+.open-menu {
+	opacity: 1;
+	width: 70vw;
+	transform: initial;
+}
+
+/* Code for medium screens */
+@media only screen and (min-width: 40em) {
+	.lrg-screen-hidden {
+		display: none;
+	}
+	.sm-screen-hidden {
+		display: initial;
+	}
+	.menu {
+		position: initial;
+		display: initial;
+		top: 0;
+		right: 0;
+		width: initial;
+		height: initial;
+		padding: initial;
+		display: flex;
+		flex-direction: initial;
+		background-color: var(--clr-neutral-100);
+		z-index: initial;
+		opacity: 1;
+		transform: initial;
+	}
+	.nav-list {
+		display: flex;
+		flex-direction: initial;
+		gap: 1.5rem;
+		font-size: 1rem;
+	}
+}
+/*
+ * There code below is for the website 
+ * GRID SYSTEM and the media quaries for
+ * the different screen sizes.
+*/
+.news-grid {
+	display: grid;
+	gap: 3.5rem;
+	grid-auto-columns: 1fr;
+	grid-template-areas: "one" "two" "three";
+}
+
+.news-article:first-child {
+	grid-area: one;
+}
+
+.news-article:nth-child(2) {
+	grid-area: two;
+}
+
+.news-article:nth-child(3) {
+	grid-area: three;
+}
+
+@media only screen and (min-width: 48em) {
+	.news-grid {
+		grid-template-columns: 60% 1fr;
+		grid-template-areas: "one one" "two two" "three three";
+	}
+}
+@media only screen and (min-width: 65em) {
+	.news-grid {
+		grid-template-columns: 65% 1fr;
+		grid-template-areas: "one two" "three three";
+	}
+}
+/*
+ * There code below is for the all
+ * the news articles and the media 
+ * quaries for the different screen sizes.
+*/
+.head-article {
+	display: grid;
+	gap: 1.5rem;
+}
+.head-article h1 {
+	font-size: 2.5rem;
+	line-height: 1;
+}
+
+.head-article-describ div {
+	display: grid;
+	gap: 1.5rem;
+	justify-items: start;
+	line-height: 1.8;
+}
+
+.news-article-with-bg {
+	padding: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.news-article-with-bg h2 {
+	font-size: 2rem;
+}
+.news-article-with-bg a {
+	color: var(--clr-neutral-100);
+	font-size: 20px;
+}
+.news-article-with-bg a:hover,
+.news-article-with-bg a:focus {
+	color: var(--clr-primary-orange);
+}
+.news-article-with-bg p {
+	margin-top: 0.5rem;
+	line-height: 1.8;
+	font-size: 15px;
+}
+
+.news-articles-with-imgs {
+	display: grid;
+	gap: 2rem;
+}
+
+.article-img-small {
+	width: 6.3rem;
+	height: fit-content;
+}
+
+.news-article-describ p:first-child {
+	font-size: 2rem;
+	line-height: 1;
+}
+.news-article-describ a {
+	font-size: 1.1rem;
+	line-height: 1.5;
+}
+.news-article-describ a:hover,
+.news-article-describ a:focus {
+	text-decoration: none;
+}
+
+/* Code for medium-large screens */
+@media only screen and (min-width: 48em) {
+	.head-article-describ {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr;
+	}
+	.news-articles-with-imgs {
+		grid-template-columns: 1fr 1fr;
+	}
+	.article-img-small {
+		image-rendering: pixelated;
+		height: fit-content;
+	}
+}
+/* Code for large screens */
+@media only screen and (min-width: 65em) {
+	.head-article-describ {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr;
+	}
+	.head-article h1 {
+		font-size: 3.8rem;
+		line-height: 1;
+	}
+	.news-articles-with-imgs {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+/*
+ * There code below is for the FOOTER
+*/
+.footer-container {
+	margin-top: 3.5rem;
+	padding: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	place-content: center;
+	text-align: center;
+	background-color: hsl(240deg, 100%, 2%);
+	color: var(--clr-neutral-100);
+}
+.footer-container a {
+	color: var(--clr-neutral-100);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-decoration-color: var(--clr-primary-orange);
+	position: relative;
+}
+.footer-container a:hover,
+.footer-container a:focus {
+	text-decoration: none;
+	color: var(--clr-primary-orange);
+	border-bottom: none;
+}

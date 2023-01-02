@@ -1,0 +1,10 @@
+.display-flex-row {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.display-flex-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

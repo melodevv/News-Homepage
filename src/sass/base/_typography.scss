@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+body {
+	font-size: 15px;
+	font-weight: 400;
+	font-family: "Inter", sans-serif;
+	color: var(--clr-neutral-400);
+	background: var(--clr-neutral-100);
+	line-height: 1.8;
+	transition: ease-in-out 5s width;
+}
+
+a {
+	color: var(--clr-neutral-400);
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: var(--clr-primary-red);
+	}
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+	max-width: 60ch;
+}
