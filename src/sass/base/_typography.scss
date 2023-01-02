@@ -8,6 +8,7 @@ body {
 	background: var(--clr-neutral-100);
 	line-height: 1.8;
 	transition: ease-in-out 5s width;
+	width: 100vw;
 	overflow-x: hidden;
 }
 
