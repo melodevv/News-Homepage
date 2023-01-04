@@ -1,0 +1,32 @@
+@use "../../abstracts" as *;
+
+@include mq(medium) {
+	/*
+ * GRID SYSTEM
+*/
+	.news-grid {
+		grid-template-columns: 60% 1fr;
+		grid-template-areas:
+			"one one"
+			"two two"
+			"three three";
+	}
+
+	/*
+ * ARTICLES SECTION
+*/
+	.head-article-describ {
+		display: grid;
+		gap: 3.5rem;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.news-articles-with-imgs {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.article-img-small {
+		image-rendering: pixelated;
+		height: fit-content;
+	}
+}

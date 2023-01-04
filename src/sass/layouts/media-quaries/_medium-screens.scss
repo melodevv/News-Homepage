@@ -1,0 +1,37 @@
+@use "../../abstracts" as *;
+
+@include mq(small) {
+	.lrg-screen-hidden {
+		display: none;
+	}
+	.sm-screen-hidden {
+		display: initial;
+	}
+
+	/*
+ * Navigation
+*/
+	.menu {
+		position: initial;
+		display: initial;
+		top: 0;
+		right: 0;
+		width: initial;
+		height: initial;
+		padding: initial;
+		display: flex;
+		flex-direction: initial;
+
+		background-color: var(--clr-neutral-100);
+		z-index: initial;
+		opacity: 1;
+		transform: initial;
+	}
+
+	.nav-list {
+		display: flex;
+		flex-direction: initial;
+		gap: 1.5rem;
+		font-size: 1rem;
+	}
+}

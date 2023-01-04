@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+.hamburger {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 38px;
+	height: 21px;
+	cursor: pointer;
+	z-index: 99;
+}
+
+.hamburger span {
+	width: 38px;
+	height: 4px;
+	border-radius: 55px;
+	background-color: var(--clr-neutral-400);
+	transition: var(--transition), width 0.5s;
+}
+
+.hamburger:hover span,
+.hamburger:focus span {
+	background-color: var(--clr-primary-red);
+}
+
+/* 
+ * JS Code to open and close 
+ * the hamburger menu
+*/
+
+.open-hamburger span:nth-child(1) {
+	width: 100%;
+	transform: translate(0, 10px) rotate(45deg);
+}
+
+.open-hamburger span:nth-child(2) {
+	width: 0;
+}
+
+.open-hamburger span:last-child {
+	width: 100%;
+	transform: translate(0, -8px) rotate(-45deg);
+}
+
+.open-menu {
+	opacity: 1;
+	width: 70vw;
+	transform: initial;
+	// &.menu {
+	// }
+}

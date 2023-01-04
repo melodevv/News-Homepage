@@ -1,11 +1,8 @@
 @use "../abstracts" as *;
 
 /*
- * There code below is for the all
- * the news articles and the media 
- * quaries for the different screen sizes.
+ * ARTICLES SECTION
 */
-
 .head-article {
 	display: grid;
 	gap: 1.5rem;
@@ -76,45 +73,5 @@
 		&:focus {
 			text-decoration: none;
 		}
-	}
-}
-
-/* Code for medium-large screens */
-@include mq(medium) {
-	.head-article-describ {
-		display: grid;
-		gap: 3.5rem;
-		grid-template-columns: 1fr 1fr;
-	}
-
-	.news-articles-with-imgs {
-		grid-template-columns: 1fr 1fr;
-	}
-
-	.article-img-small {
-		image-rendering: pixelated;
-		height: fit-content;
-	}
-}
-
-/* Code for large screens */
-@include mq(large) {
-	.head-article-describ {
-		display: grid;
-		gap: 3.5rem;
-		grid-template-columns: 1fr 1fr;
-	}
-
-	.head-article {
-		h1 {
-			font-size: 3.8rem;
-			line-height: 1;
-		}
-	}
-
-	.news-articles-with-imgs {
-		display: grid;
-		gap: 3.5rem;
-		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
