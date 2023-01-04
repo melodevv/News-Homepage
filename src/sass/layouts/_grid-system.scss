@@ -1,9 +1,7 @@
 @use "../abstracts" as *;
 
 /*
- * There code below is for the website 
- * GRID SYSTEM and the media quaries for
- * the different screen sizes.
+ * GRID SYSTEM
 */
 .news-grid {
 	display: grid;
@@ -13,10 +11,6 @@
 		"one"
 		"two"
 		"three";
-
-	// padding-block: 2rem;
-	// width: min(95%, 70rem);
-	// margin-inline: auto;
 }
 
 .news-article:first-child {
@@ -27,23 +21,4 @@
 }
 .news-article:nth-child(3) {
 	grid-area: three;
-}
-
-@include mq(medium) {
-	.news-grid {
-		grid-template-columns: 60% 1fr;
-		grid-template-areas:
-			"one one"
-			"two two"
-			"three three";
-	}
-}
-
-@include mq(large) {
-	.news-grid {
-		grid-template-columns: 65% 1fr;
-		grid-template-areas:
-			"one two"
-			"three three";
-	}
 }

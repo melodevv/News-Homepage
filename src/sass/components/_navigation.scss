@@ -2,11 +2,7 @@
 
 /*
  * Navigation
- * All the code relating to the
- * navigation of the website on
- * all screen sizes.
 */
-
 .nav-container {
 	position: relative;
 	top: 0;
@@ -27,13 +23,13 @@
 }
 
 .menu {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	width: 70%;
 	height: 100vh;
 	padding: 10rem 1.5rem;
-
+	// overflow: hidden;
 	display: flex;
 	flex-direction: column;
 
@@ -49,64 +45,4 @@
 	flex-direction: column;
 	gap: 1.5rem;
 	font-size: 1.5rem;
-}
-
-.menu-close {
-	display: none;
-}
-
-/* 
- * JS Code to open and close 
- * the hamburger menu
-*/
-.open-hamburger {
-	.menu-open {
-		display: none;
-		z-index: 99;
-	}
-	.menu-close {
-		display: initial;
-	}
-}
-
-.open-menu {
-	opacity: 1;
-	width: 70%;
-	transform: initial;
-	// &.menu {
-	// }
-}
-
-/* Code for medium screens */
-@include mq(small) {
-	.lrg-screen-hidden {
-		display: none;
-	}
-	.sm-screen-hidden {
-		display: initial;
-	}
-
-	.menu {
-		position: initial;
-		display: initial;
-		top: 0;
-		right: 0;
-		width: initial;
-		height: initial;
-		padding: initial;
-
-		display: flex;
-		flex-direction: initial;
-
-		background-color: var(--clr-neutral-100);
-		z-index: initial;
-		opacity: 1;
-		transform: initial;
-	}
-	.nav-list {
-		display: flex;
-		flex-direction: initial;
-		gap: 1.5rem;
-		font-size: 1rem;
-	}
 }
